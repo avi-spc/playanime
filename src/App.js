@@ -1,11 +1,13 @@
 import AlphanumericSearch from "./components/AlphanumericSearch";
+import AnimeGrid from "./components/AnimeGrid";
 import CharactersContextProvider from "./contexts/charactersContext";
 
 const App = () => {
   return (
     <CharactersContextProvider>
       <div className="App">
-        <AlphanumericSearch />
+        <AnimeGrid />
+        <AlphanumericSearch/>
       </div>
     </CharactersContextProvider>
   );

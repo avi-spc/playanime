@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  object-fit: cover;
 }
 
 html {
@@ -15,6 +16,7 @@ html {
 body {
   background-color: $surface-1;
   font-family: "Quicksand", sans-serif;
+  color: $text-primary;
 }
 
 .App {

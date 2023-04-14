@@ -1,0 +1,28 @@
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, min-content));
+  gap: 4rem;
+
+  justify-content: space-between;
+
+  grid-column: 1 / span 8;
+}
+
+.anime-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+
+  &__image {
+    width: 25rem;
+    height: 25rem;
+
+    border-radius: $br-2;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}

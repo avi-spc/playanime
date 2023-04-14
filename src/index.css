@@ -4,14 +4,16 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  object-fit: cover; }
 
 html {
   font-size: 45%; }
 
 body {
   background-color: #1E1E1E;
-  font-family: "Quicksand", sans-serif; }
+  font-family: "Quicksand", sans-serif;
+  color: #D9D9D9; }
 
 .App {
   max-width: 170rem;
@@ -30,6 +32,26 @@ body {
   grid-column: 1 / span 8; }
   .alphanumeric-search > :first-child {
     grid-column: 1 / span 2; }
+
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, min-content));
+  gap: 4rem;
+  justify-content: space-between;
+  grid-column: 1 / span 8; }
+
+.anime-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center; }
+  .anime-tile__image {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 2.5rem; }
+  .anime-tile__name {
+    font-size: 2rem;
+    font-weight: 600; }
 
 .btn {
   color: #D9D9D9;
