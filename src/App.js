@@ -1,5 +1,6 @@
 import AlphanumericSearch from "./components/AlphanumericSearch";
 import AnimeGrid from "./components/AnimeGrid";
+import AnimeList from "./components/AnimeList";
 import CharactersContextProvider from "./contexts/charactersContext";
 
 const App = () => {
@@ -7,7 +8,7 @@ const App = () => {
     <CharactersContextProvider>
       <div className="App">
         <AnimeGrid />
-        <AlphanumericSearch/>
+        <AnimeList />
       </div>
     </CharactersContextProvider>
   );

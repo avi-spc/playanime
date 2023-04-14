@@ -27,3 +27,43 @@ body {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 4rem;
 }
+
+.anime-list {
+  grid-column: 9 / -1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  margin-left: 4.5rem;
+}
+.anime-postcard {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 0 2rem;
+
+  &__image {
+    width: 9.3rem;
+    height: 9.3rem;
+    border-radius: $br-3;
+    grid-row: 1/3;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  &__viewers {
+    align-self: start;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    &--count {
+      font-size: 1.6rem;
+      font-weight: 300;
+    }
+  }
+}

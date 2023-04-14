@@ -22,6 +22,34 @@ body {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 4rem; }
 
+.anime-list {
+  grid-column: 9 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-left: 4.5rem; }
+
+.anime-postcard {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 0 2rem; }
+  .anime-postcard__image {
+    width: 9.3rem;
+    height: 9.3rem;
+    border-radius: 3rem;
+    grid-row: 1/3; }
+  .anime-postcard__name {
+    font-size: 2rem;
+    font-weight: 600; }
+  .anime-postcard__viewers {
+    align-self: start;
+    display: flex;
+    gap: 10px;
+    align-items: center; }
+    .anime-postcard__viewers--count {
+      font-size: 1.6rem;
+      font-weight: 300; }
+
 .alphanumeric-search {
   display: grid;
   grid-template-columns: repeat(13, minmax(0, 1fr));
@@ -48,7 +76,7 @@ body {
   .anime-tile__image {
     width: 25rem;
     height: 25rem;
-    border-radius: 2.5rem; }
+    border-radius: 3rem; }
   .anime-tile__name {
     font-size: 2rem;
     font-weight: 600; }
