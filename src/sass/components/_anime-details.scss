@@ -1,0 +1,55 @@
+.anime-details {
+  display: flex;
+  gap: 3rem;
+
+  padding: 3rem 3rem 5rem 3rem;
+  background-color: $surface-2;
+  border-radius: $br-6;
+
+  grid-column: 1 / span 8;
+
+  font-size: 2rem;
+  font-weight: 300;
+
+  &__img-p-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  &__rating {
+    padding: 2rem 2.5rem;
+    background-color: $surface-3;
+    border-radius: $br-1;
+  }
+
+  img {
+    width: 22rem;
+    height: 22rem;
+
+    border-radius: $br-5;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &__meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, max-content));
+      gap: 3rem;
+
+      margin-top: 2rem;
+      padding-right: 5rem;
+
+      justify-content: space-between;
+
+      .meta-type {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
