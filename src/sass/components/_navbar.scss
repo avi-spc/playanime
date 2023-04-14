@@ -1,0 +1,73 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+
+  font-size: 2rem;
+  font-weight: 300;
+
+  grid-column: 1/-1;
+
+  &__default-links {
+    display: flex;
+    gap: 3rem;
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &--primary {
+      font-family: "Unbounded", cursive;
+      font-size: 4rem;
+      font-weight: 700;
+    }
+
+    &--secondary {
+      font-family: "Syncopate", cursive;
+      font-size: 2.4rem;
+    }
+  }
+
+  &__search-p-user {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    flex-basis: 27%;
+
+    form {
+      flex-basis: 100%;
+      position: relative;
+
+      input {
+        font-family: "Quicksand", sans-serif;
+        font-size: 2rem;
+
+        padding: 2rem 2.5rem;
+        color: $text-primary;
+        background-color: $surface-2;
+
+        border-radius: $br-1;
+        border: none;
+
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
