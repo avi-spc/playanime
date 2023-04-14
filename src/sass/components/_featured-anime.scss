@@ -1,0 +1,37 @@
+.featured-anime {
+  grid-column: 1 / -1;
+  position: relative;
+
+  &__image {
+    height: 60rem;
+    border-radius: $br-6;
+    width: 60%;
+  }
+
+  .anime-details {
+    padding: 5rem;
+    width: 50%;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60rem;
+
+    .btn--watch {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__cta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto;
+
+      .prev-p-next {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+  }
+}

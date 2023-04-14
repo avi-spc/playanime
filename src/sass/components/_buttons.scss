@@ -1,15 +1,30 @@
 .btn {
-    color: $text-primary;
-    background-color: $surface-3;
-    border: none;
-    cursor: pointer;
-  
-    &--sm {
-      font-size: 2.4rem;
-      font-weight: 500;
-      
-      padding: 1.5rem 2.5rem;
-      border-radius: $br-1;
-    }
+  color: $text-primary;
+  background-color: $surface-3;
+  border: none;
+  cursor: pointer;
+
+  &--watch {
+    padding: 0.5rem;
+    padding-right: 2rem;
+
+    border-radius: $br-2;
   }
-  
+
+  &--sm {
+    font-size: 2.4rem;
+    font-weight: 500;
+
+    padding: 1.5rem 2.5rem;
+    border-radius: $br-1;
+  }
+
+  &--trans {
+    background-color: transparent;
+  }
+
+  img {
+    width: 7rem;
+    height: 7rem;
+  }
+}

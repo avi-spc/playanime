@@ -25,12 +25,17 @@ body {
   gap: 4rem; }
 
 h2,
+h3,
 h5 {
   font-family: "Unbounded", cursive; }
 
 h2 {
   font-size: 3.2rem;
   font-weight: 700; }
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 500; }
 
 h5 {
   font-size: 2rem;
@@ -137,11 +142,46 @@ h5 {
   background-color: #2C2C2C;
   border: none;
   cursor: pointer; }
+  .btn--watch {
+    padding: 0.5rem;
+    padding-right: 2rem;
+    border-radius: 2.5rem; }
   .btn--sm {
     font-size: 2.4rem;
     font-weight: 500;
     padding: 1.5rem 2.5rem;
     border-radius: 2rem; }
+  .btn--trans {
+    background-color: transparent; }
+  .btn img {
+    width: 7rem;
+    height: 7rem; }
+
+.featured-anime {
+  grid-column: 1 / -1;
+  position: relative; }
+  .featured-anime__image {
+    height: 60rem;
+    border-radius: 5rem;
+    width: 60%; }
+  .featured-anime .anime-details {
+    padding: 5rem;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60rem; }
+    .featured-anime .anime-details .btn--watch {
+      display: flex;
+      align-items: center;
+      gap: 1rem; }
+    .featured-anime .anime-details__cta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto; }
+      .featured-anime .anime-details__cta .prev-p-next {
+        display: flex;
+        gap: 2rem; }
 
 .navbar {
   display: flex;
