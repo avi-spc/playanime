@@ -11,8 +11,7 @@ const App = () => {
   return (
     <CharactersContextProvider>
       <div className="App">
-        <AnimeList type="broad" />
-        <AnimeList type="compact" />
+        <Navbar />
       </div>
     </CharactersContextProvider>
   );

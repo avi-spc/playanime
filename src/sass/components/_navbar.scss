@@ -38,9 +38,9 @@
     align-items: center;
     gap: 3rem;
 
-    flex-basis: 27%;
+    flex-basis: 26.5%;
 
-    form {
+    .search-form {
       flex-basis: 100%;
       position: relative;
 
@@ -60,6 +60,10 @@
         &:focus {
           outline: none;
         }
+      }
+
+      .input-search-group {
+        position: relative;
       }
 
       .search-icon {
