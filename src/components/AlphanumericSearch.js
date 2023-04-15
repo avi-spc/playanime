@@ -1,17 +1,12 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 
 import { CharactersContext } from "../contexts/charactersContext";
+import Keypad from "./Keypad";
 
 const AlphanumericSearch = () => {
   const { characters } = useContext(CharactersContext);
 
-  return (
-    <div className="alphanumeric-search">
-      {characters.map((char) => (
-        <button className="btn btn--sm" key={char}>{char}</button>
-      ))}
-    </div>
-  );
+  return <Keypad keys={characters} type="alphanumeric"/>;
 };
 
 export default AlphanumericSearch;

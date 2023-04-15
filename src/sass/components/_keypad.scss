@@ -1,4 +1,4 @@
-.alphanumeric-search {
+.keypad {
   display: grid;
   grid-template-columns: repeat(13, minmax(0, 1fr));
   gap: 1rem;
@@ -9,7 +9,9 @@
 
   grid-column: 1 / span 8;
 
-  & > :first-child {
-    grid-column: 1 / span 2;
+  &.alphanumeric {
+    & > :first-child {
+      grid-column: 1 / span 2;
+    }
   }
 }
