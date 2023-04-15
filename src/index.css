@@ -46,6 +46,19 @@ h5 {
   font-size: 2rem;
   font-weight: 500; }
 
+.activity-path {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 2rem;
+  font-weight: 300; }
+  .activity-path :last-child {
+    font-weight: 600; }
+  .activity-path img {
+    width: 3rem;
+    height: 3rem; }
+
 .anime-details {
   display: flex;
   gap: 3rem;
@@ -237,6 +250,25 @@ h5 {
       .featured-anime .anime-details__cta .prev-p-next {
         display: flex;
         gap: 2rem; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 5.5rem 0;
+  background-color: #242424; }
+  .footer__content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 170rem;
+    margin: 0 auto; }
+  .footer .socials {
+    display: flex;
+    gap: 2rem; }
+    .footer .socials img {
+      width: 4rem;
+      height: 4rem; }
 
 .keypad {
   display: grid;

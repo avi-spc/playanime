@@ -1,0 +1,28 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+  padding: 5.5rem 0;
+
+  background-color: $surface-2;
+
+  &__content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 170rem;
+    margin: 0 auto;
+  }
+
+  .socials {
+    display: flex;
+    gap: 2rem;
+
+    img {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

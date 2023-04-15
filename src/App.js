@@ -7,13 +7,17 @@ import Navbar from "./components/Navbar";
 import CharactersContextProvider from "./contexts/charactersContext";
 import AnimeList from "./components/AnimeList";
 import AnimeOverlayDetails from "./components/AnimeOverlayDetails";
+import Footer from "./components/Footer";
+import ActivityPath from "./components/ActivityPath";
 
 const App = () => {
   return (
     <CharactersContextProvider>
       <div className="App">
-        <AnimeOverlayDetails />
+        <FeaturedAnime />
+        <ActivityPath />
       </div>
+      <Footer />
     </CharactersContextProvider>
   );
 };

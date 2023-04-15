@@ -1,0 +1,19 @@
+.activity-path {
+  grid-column: 1/-1;
+
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  font-size: 2rem;
+  font-weight: 300;
+
+  :last-child {
+    font-weight: 600;
+  }
+
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
