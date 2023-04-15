@@ -1,16 +1,31 @@
 .anime-list {
-  grid-column: 9 / -1;
-
   display: flex;
   flex-direction: column;
-  gap: 4rem;
 
-  margin-left: 4.5rem;
+  &--compact {
+    grid-column: 9 / -1;
+
+    gap: 4rem;
+    margin-left: 4.5rem;
+  }
+
+  &--broad {
+    grid-column: 1 / span 8;
+
+    gap: 1.5rem;
+  }
 }
+
 .anime-postcard {
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: 0 2rem;
+
+  &.broad {
+    background-color: $surface-2;
+    border-radius: $br-4;
+    padding: 1.2rem;
+  }
 
   &__image {
     width: 9.3rem;

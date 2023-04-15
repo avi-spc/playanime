@@ -1,10 +1,10 @@
 import AnimePostcard from "./AnimePostcard";
 
-const AnimeList = () => {
+const AnimeList = ({ type }) => {
   return (
-    <div className="anime-list">
+    <div className={`anime-list anime-list--${type}`}>
       {Array.from(Array(5)).map((anime, index) => (
-        <AnimePostcard key={index} />
+        <AnimePostcard key={index} type={type} />
       ))}
     </div>
   );

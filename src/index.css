@@ -41,17 +41,6 @@ h5 {
   font-size: 2rem;
   font-weight: 500; }
 
-.keypad {
-  display: grid;
-  grid-template-columns: repeat(13, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-  background-color: #242424;
-  border-radius: 2.5rem;
-  grid-column: 1 / span 8; }
-  .keypad.alphanumeric > :first-child {
-    grid-column: 1 / span 2; }
-
 .anime-details {
   display: flex;
   gap: 3rem;
@@ -110,16 +99,24 @@ h5 {
     font-weight: 600; }
 
 .anime-list {
-  grid-column: 9 / -1;
   display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  margin-left: 4.5rem; }
+  flex-direction: column; }
+  .anime-list--compact {
+    grid-column: 9 / -1;
+    gap: 4rem;
+    margin-left: 4.5rem; }
+  .anime-list--broad {
+    grid-column: 1 / span 8;
+    gap: 1.5rem; }
 
 .anime-postcard {
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: 0 2rem; }
+  .anime-postcard.broad {
+    background-color: #242424;
+    border-radius: 3.5rem;
+    padding: 1.2rem; }
   .anime-postcard__image {
     width: 9.3rem;
     height: 9.3rem;
@@ -182,6 +179,17 @@ h5 {
       .featured-anime .anime-details__cta .prev-p-next {
         display: flex;
         gap: 2rem; }
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #242424;
+  border-radius: 2.5rem;
+  grid-column: 1 / span 8; }
+  .keypad.alphanumeric > :first-child {
+    grid-column: 1 / span 2; }
 
 .navbar {
   display: flex;

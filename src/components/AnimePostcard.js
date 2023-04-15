@@ -1,6 +1,6 @@
-const AnimePostcard = () => {
+const AnimePostcard = ({ type }) => {
   return (
-    <div className="anime-postcard">
+    <div className={`anime-postcard ${type}`}>
       <img
         className="anime-postcard__image"
         src="https://img.bunnycdnn.ru/_r/300x400/100/b4/f4/b4f4d6d100fffdbc11cb82c4514fa652/b4f4d6d100fffdbc11cb82c4514fa652.jpg"
