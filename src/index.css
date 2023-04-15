@@ -13,9 +13,9 @@ html {
   font-size: 45%; }
 
 body {
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   font-family: "Quicksand", sans-serif;
-  color: #D9D9D9; }
+  color: #d9d9d9; }
 
 .App {
   max-width: 170rem;
@@ -26,6 +26,7 @@ body {
 
 h2,
 h3,
+h4,
 h5 {
   font-family: "Unbounded", cursive; }
 
@@ -34,6 +35,10 @@ h2 {
   font-weight: 700; }
 
 h3 {
+  font-size: 2.4rem;
+  font-weight: 700; }
+
+h4 {
   font-size: 2.4rem;
   font-weight: 500; }
 
@@ -57,7 +62,7 @@ h5 {
     gap: 2.5rem; }
   .anime-details__rating {
     padding: 2rem 2.5rem;
-    background-color: #2C2C2C;
+    background-color: #2c2c2c;
     border-radius: 2rem; }
   .anime-details img {
     width: 22rem;
@@ -77,6 +82,32 @@ h5 {
       .anime-details__info__meta .meta-type {
         font-weight: 600;
         margin-bottom: 0.5rem; }
+
+.anime-overlay-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: absolute;
+  max-width: 70rem;
+  padding: 3rem;
+  background-color: #2c2c2c;
+  border-radius: 3rem;
+  font-size: 2rem;
+  font-weight: 300; }
+  .anime-overlay-details__synopsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden; }
+  .anime-overlay-details__meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 1rem 6rem; }
+    .anime-overlay-details__meta .meta-type {
+      font-weight: 600;
+      margin-bottom: 0.5rem; }
+  .anime-overlay-details button {
+    margin-top: 1.5rem; }
 
 .anime-grid {
   display: grid;
@@ -112,7 +143,7 @@ h5 {
     width: 100%;
     padding: 2rem 3rem 2rem 2rem;
     gap: 2rem;
-    background-color: #2C2C2C;
+    background-color: #2c2c2c;
     border-radius: 2rem;
     position: absolute;
     top: calc(117%); }
@@ -158,8 +189,8 @@ h5 {
   text-overflow: ellipsis; }
 
 .btn {
-  color: #D9D9D9;
-  background-color: #2C2C2C;
+  color: #d9d9d9;
+  background-color: #2c2c2c;
   border: none;
   cursor: pointer; }
   .btn--watch {
@@ -171,6 +202,10 @@ h5 {
     font-weight: 500;
     padding: 1.5rem 2.5rem;
     border-radius: 2rem; }
+  .btn--lg {
+    padding: 2.2rem;
+    border-radius: 2.5rem;
+    background-color: #353535; }
   .btn--trans {
     background-color: transparent; }
   .btn img {
@@ -249,7 +284,7 @@ h5 {
         font-family: "Quicksand", sans-serif;
         font-size: 2rem;
         padding: 2rem 2.5rem;
-        color: #D9D9D9;
+        color: #d9d9d9;
         background-color: #242424;
         border-radius: 2rem;
         border: none;

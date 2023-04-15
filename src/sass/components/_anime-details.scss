@@ -53,3 +53,40 @@
     }
   }
 }
+
+.anime-overlay-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: absolute;
+  max-width: 70rem;
+
+  padding: 3rem;
+  background-color: $surface-3;
+  border-radius: $br-3;
+
+  font-size: 2rem;
+  font-weight: 300;
+
+  &__synopsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 1rem 6rem;
+
+    .meta-type {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  button {
+    margin-top: 1.5rem;
+  }
+}

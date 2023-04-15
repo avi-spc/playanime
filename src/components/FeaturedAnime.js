@@ -34,7 +34,7 @@ const FeaturedAnime = () => {
           <div className="anime-details__cta">
             <button className="btn btn--watch">
               <img src="./images/icons/play.png" alt="" />
-              <h3>Watch</h3>
+              <h4>Watch</h4>
             </button>
             <div className="prev-p-next">
               <button className="btn btn--trans">

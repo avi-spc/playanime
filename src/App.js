@@ -6,12 +6,13 @@ import FeaturedAnime from "./components/FeaturedAnime";
 import Navbar from "./components/Navbar";
 import CharactersContextProvider from "./contexts/charactersContext";
 import AnimeList from "./components/AnimeList";
+import AnimeOverlayDetails from "./components/AnimeOverlayDetails";
 
 const App = () => {
   return (
     <CharactersContextProvider>
       <div className="App">
-        <Navbar />
+        <AnimeOverlayDetails />
       </div>
     </CharactersContextProvider>
   );

@@ -19,6 +19,12 @@
     border-radius: $br-1;
   }
 
+  &--lg {
+    padding: 2.2rem;
+    border-radius: $br-2;
+    background-color: $surface-4;
+  }
+
   &--trans {
     background-color: transparent;
   }
