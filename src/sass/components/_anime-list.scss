@@ -2,16 +2,11 @@
   display: flex;
   flex-direction: column;
 
-  &--sidebar {
-    // grid-column: 9 / -1;
-
+  &--compact {
     gap: 4rem;
-    // margin-left: 5rem;
   }
 
-  &--main-content {
-    grid-column: 1 / span 8;
-
+  &--broad {
     gap: 1.5rem;
 
     .anime-postcard {

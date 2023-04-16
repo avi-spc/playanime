@@ -7,8 +7,6 @@
   background-color: $surface-2;
   border-radius: $br-2;
 
-  grid-column: 1 / span 8;
-
   &.alphanumeric {
     & > :first-child {
       grid-column: 1 / span 2;

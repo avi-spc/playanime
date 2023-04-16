@@ -1,13 +1,15 @@
+import { NavLink } from "react-router-dom";
+
 import AnimeList from "./AnimeList";
 
 const Navbar = () => {
   return (
     <nav className="navbar nav">
       <div className="navbar__default-links">
-        <div>Home</div>
-        <div>Ongoing</div>
-        <div>Upcoming</div>
-        <div>Genres</div>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/ongoing">Ongoing</NavLink>
+        <NavLink to="/upcoming">Upcoming</NavLink>
+        <NavLink to="/genres">Genres</NavLink>
       </div>
       <div className="navbar__logo">
         <div className="navbar__logo--primary">play</div>

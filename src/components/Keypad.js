@@ -1,10 +1,14 @@
+import { NavLink } from "react-router-dom";
+
 const Keypad = ({ keys, type }) => {
   return (
     <div className={`keypad ${type}`}>
       {keys.map((key) => (
-        <button className="btn btn--sm" key={key}>
-          {key}
-        </button>
+        <NavLink to="az-list">
+          <button className="btn btn--sm" key={key}>
+            {key}
+          </button>
+        </NavLink>
       ))}
     </div>
   );

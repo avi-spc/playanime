@@ -46,6 +46,14 @@ body {
   margin-left: 5rem;
 }
 
+a,
+a:hover,
+a:visited,
+a:link {
+  color: $text-primary;
+  text-decoration: none;
+}
+
 .anime-stream {
   display: flex;
   flex-direction: column;

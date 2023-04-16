@@ -1,6 +1,8 @@
+import { NavLink } from "react-router-dom";
+
 const FeaturedAnime = () => {
   return (
-    <section className="featured-anime hero">
+    <section className="featured-anime">
       <img
         className="featured-anime__image"
         src="./images/kiminonawa.jpg"
@@ -32,10 +34,12 @@ const FeaturedAnime = () => {
             </div>
           </div>
           <div className="anime-details__cta">
-            <button className="btn btn--watch">
-              <img src="./images/icons/play.png" alt="" />
-              <h4>Watch</h4>
-            </button>
+            <NavLink to={`/stream`}>
+              <button className="btn btn--watch">
+                <img src="./images/icons/play.png" alt="" />
+                <h5>Watch</h5>
+              </button>
+            </NavLink>
             <div className="prev-p-next">
               <button className="btn btn--trans">
                 <img src="./images/icons/arrow_left.png" alt="" />

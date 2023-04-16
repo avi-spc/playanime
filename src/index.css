@@ -36,6 +36,13 @@ body {
   grid-column: 9/-1;
   margin-left: 5rem; }
 
+a,
+a:hover,
+a:visited,
+a:link {
+  color: #d9d9d9;
+  text-decoration: none; }
+
 .anime-stream {
   display: flex;
   flex-direction: column;
@@ -77,11 +84,15 @@ h6 {
   font-size: 2rem;
   font-weight: 500; }
 
+.active {
+  font-weight: 700; }
+
 .activity-path {
   grid-column: 1/-1;
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  margin-bottom: 5rem;
   font-size: 2rem;
   font-weight: 300; }
   .activity-path :last-child {
@@ -175,12 +186,11 @@ h6 {
 .anime-list {
   display: flex;
   flex-direction: column; }
-  .anime-list--sidebar {
+  .anime-list--compact {
     gap: 4rem; }
-  .anime-list--main-content {
-    grid-column: 1 / span 8;
+  .anime-list--broad {
     gap: 1.5rem; }
-    .anime-list--main-content .anime-postcard {
+    .anime-list--broad .anime-postcard {
       background-color: #242424;
       border-radius: 3.5rem;
       padding: 1.2rem; }
@@ -241,7 +251,8 @@ h6 {
     font-size: 2.4rem;
     font-weight: 500;
     padding: 1.5rem 2.5rem;
-    border-radius: 2rem; }
+    border-radius: 2rem;
+    width: 100%; }
   .btn--lg {
     padding: 2.2rem;
     border-radius: 2.5rem;
@@ -300,8 +311,7 @@ h6 {
   gap: 1rem;
   padding: 1rem;
   background-color: #242424;
-  border-radius: 2.5rem;
-  grid-column: 1 / span 8; }
+  border-radius: 2.5rem; }
   .keypad.alphanumeric > :first-child {
     grid-column: 1 / span 2; }
 
