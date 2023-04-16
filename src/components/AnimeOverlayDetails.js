@@ -1,7 +1,7 @@
 const AnimeOverlayDetails = () => {
   return (
     <div className="anime-overlay-details">
-      <h3>Skip and Loafer</h3>
+      <h4>Skip and Loafer</h4>
       <p className="anime-overlay-details__synopsis">
         The second season of Mahoutsukai no Yome. Chise was able to accept Elias
         and herself, if not necessarily everything about her situation. After

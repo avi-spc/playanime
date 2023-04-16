@@ -139,11 +139,14 @@ h6 {
         margin-bottom: 0.5rem; }
 
 .anime-overlay-details {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 105%;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  position: absolute;
-  max-width: 70rem;
+  width: 65rem;
   padding: 3rem;
   background-color: #2c2c2c;
   border-radius: 3rem;
@@ -171,6 +174,7 @@ h6 {
   justify-content: space-between; }
 
 .anime-tile {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -182,6 +186,10 @@ h6 {
   .anime-tile__name {
     font-size: 2rem;
     font-weight: 600; }
+  .anime-tile .anime-overlay-details {
+    display: none; }
+  .anime-tile:hover > .anime-overlay-details {
+    display: flex; }
 
 .anime-list {
   display: flex;

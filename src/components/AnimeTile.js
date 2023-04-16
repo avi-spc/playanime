@@ -1,3 +1,5 @@
+import AnimeOverlayDetails from "./AnimeOverlayDetails";
+
 const AnimeTile = () => {
   return (
     <div className="anime-tile">
@@ -7,6 +9,7 @@ const AnimeTile = () => {
         alt=""
       />
       <div className="anime-tile__name">Skip and Loafer</div>
+      <AnimeOverlayDetails />
     </div>
   );
 };

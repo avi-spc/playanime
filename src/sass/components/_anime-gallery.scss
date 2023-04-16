@@ -7,6 +7,8 @@
 }
 
 .anime-tile {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -22,5 +24,13 @@
   &__name {
     font-size: 2rem;
     font-weight: 600;
+  }
+
+  .anime-overlay-details {
+    display: none;
+  }
+
+  &:hover > .anime-overlay-details {
+    display: flex;
   }
 }
