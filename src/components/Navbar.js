@@ -2,7 +2,7 @@ import AnimeList from "./AnimeList";
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
+    <nav className="navbar nav">
       <div className="navbar__default-links">
         <div>Home</div>
         <div>Ongoing</div>
@@ -23,7 +23,7 @@ const Navbar = () => {
               alt=""
             />
           </div>
-          <AnimeList type="search" />
+          {/* <AnimeList type="search" /> */}
         </form>
         <img className="icon user-icon" src="./images/icons/user.png" alt="" />
       </div>

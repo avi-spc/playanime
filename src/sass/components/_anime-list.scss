@@ -2,17 +2,23 @@
   display: flex;
   flex-direction: column;
 
-  &--compact {
-    grid-column: 9 / -1;
+  &--sidebar {
+    // grid-column: 9 / -1;
 
     gap: 4rem;
-    margin-left: 4.5rem;
+    // margin-left: 5rem;
   }
 
-  &--broad {
+  &--main-content {
     grid-column: 1 / span 8;
 
     gap: 1.5rem;
+
+    .anime-postcard {
+      background-color: $surface-2;
+      border-radius: $br-4;
+      padding: 1.2rem;
+    }
   }
 
   &--search {
@@ -57,12 +63,6 @@
       font-weight: 300;
     }
   }
-}
-
-.broad {
-  background-color: $surface-2;
-  border-radius: $br-4;
-  padding: 1.2rem;
 }
 
 .search {

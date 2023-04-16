@@ -9,13 +9,22 @@ import AnimeList from "./components/AnimeList";
 import AnimeOverlayDetails from "./components/AnimeOverlayDetails";
 import Footer from "./components/Footer";
 import ActivityPath from "./components/ActivityPath";
+import BaseStructure from "./components/BaseStructure";
+import AnimeStream from "./components/AnimeStream";
 
 const App = () => {
   return (
     <CharactersContextProvider>
       <div className="App">
-        <FeaturedAnime />
-        <ActivityPath />
+        <Navbar />
+        {/* <FeaturedAnime /> */}
+        <section className="main-content">
+          {/* <AnimeStream />
+          <AnimeGrid /> */}
+          <AlphanumericSearch />
+          <AnimeList type="main-content" />
+        </section>
+        <AnimeList type="sidebar" />
       </div>
       <Footer />
     </CharactersContextProvider>

@@ -23,9 +23,43 @@ body {
 
 .App {
   max-width: 170rem;
-  margin: 0 auto;
+  margin: 3rem auto 10rem auto;
 
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0 4rem;
+
+  grid-auto-flow: column;
+}
+
+.nav,
+.hero {
+  grid-column: 1/-1;
+}
+
+.main-content {
+  grid-column: 1 / span 8;
+}
+
+.sidebar {
+  grid-column: 9/-1;
+  margin-left: 5rem;
+}
+
+.anime-stream {
+  display: flex;
+  flex-direction: column;
   gap: 4rem;
+
+  margin-bottom: 10rem;
+
+  img {
+    height: 56.4rem;
+    width: auto;
+    border-radius: $br-6;
+  }
+}
+
+.anime-gallery {
+  margin-bottom: 15rem;
 }

@@ -6,7 +6,12 @@ import Keypad from "./Keypad";
 const AlphanumericSearch = () => {
   const { characters } = useContext(CharactersContext);
 
-  return <Keypad keys={characters} type="alphanumeric"/>;
+  return (
+    <section className="alphanumeric-search">
+      <div>Search by alphabets</div>
+      <Keypad keys={characters} type="alphanumeric" />
+    </section>
+  );
 };
 
 export default AlphanumericSearch;

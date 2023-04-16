@@ -1,6 +1,6 @@
 const FeaturedAnime = () => {
   return (
-    <div className="featured-anime">
+    <section className="featured-anime hero">
       <img
         className="featured-anime__image"
         src="./images/kiminonawa.jpg"
@@ -47,7 +47,7 @@ const FeaturedAnime = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
