@@ -53,21 +53,3 @@ a:link {
   color: $text-primary;
   text-decoration: none;
 }
-
-.anime-stream {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-
-  margin-bottom: 10rem;
-
-  img {
-    height: 56.4rem;
-    width: auto;
-    border-radius: $br-6;
-  }
-}
-
-.anime-gallery {
-  margin-bottom: 15rem;
-}

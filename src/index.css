@@ -43,19 +43,6 @@ a:link {
   color: #d9d9d9;
   text-decoration: none; }
 
-.anime-stream {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  margin-bottom: 10rem; }
-  .anime-stream img {
-    height: 56.4rem;
-    width: auto;
-    border-radius: 5rem; }
-
-.anime-gallery {
-  margin-bottom: 15rem; }
-
 h2,
 h3,
 h4,
@@ -167,6 +154,9 @@ h6 {
   .anime-overlay-details button {
     margin-top: 1.5rem; }
 
+.anime-gallery {
+  margin-bottom: 15rem; }
+
 .anime-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, min-content));
@@ -245,6 +235,15 @@ h6 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+
+.anime-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 10rem; }
+  .anime-stream iframe {
+    border-radius: 5rem;
+    aspect-ratio: 16/9; }
 
 .btn {
   color: #d9d9d9;

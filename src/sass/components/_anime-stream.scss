@@ -1,0 +1,12 @@
+.anime-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  margin-bottom: 10rem;
+
+  iframe {
+    border-radius: $br-6;
+    aspect-ratio: 16/9;
+  }
+}
