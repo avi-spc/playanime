@@ -19,7 +19,7 @@ const AnimeDetails = ({ anime }) => {
           </div>
           <div>
             <div className="meta-type">Genre</div>
-            <div className="meta-value">{anime.genres.splice(0, 1)}</div>
+            <div className="meta-value">{anime.genres.slice(0, 1)}</div>
           </div>
           <div>
             <div className="meta-type">Date Aired</div>

@@ -7,6 +7,10 @@
   background-color: $surface-2;
   border-radius: $br-2;
 
+  a.active-button {
+    filter: invert(100%);
+  }
+
   &.alphanumeric {
     & > :first-child {
       grid-column: 1 / span 2;

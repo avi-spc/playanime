@@ -264,6 +264,8 @@ h6 {
     padding: 1.5rem 2.5rem;
     border-radius: 2rem;
     width: 100%; }
+    .btn--sm:hover {
+      background-color: #353535; }
   .btn--lg {
     padding: 2.2rem;
     border-radius: 2.5rem;
@@ -323,6 +325,8 @@ h6 {
   padding: 1rem;
   background-color: #242424;
   border-radius: 2.5rem; }
+  .keypad a.active-button {
+    filter: invert(100%); }
   .keypad.alphanumeric > :first-child {
     grid-column: 1 / span 2; }
 
