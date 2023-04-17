@@ -1,8 +1,12 @@
 import Keypad from "./Keypad";
 
-const EpisodesCount = ({ episodes }) => {
+const EpisodesCount = ({ anime }) => {
   return (
-    <Keypad keys={episodes.map((ep) => [ep.number, ep.url])} type="numeric" />
+    <Keypad
+      keys={anime.episodes.map((ep) => [ep.number, ep.id])}
+      animeId={anime.id}
+      type="numeric"
+    />
   );
 };
 
