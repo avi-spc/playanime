@@ -1,12 +1,17 @@
+import { useContext } from "react";
+
 import AnimeTile from "./AnimeTile";
+import { RecentEpisodesContext } from "../contexts/recentEpisodesContext";
 
 const AnimeGrid = () => {
+  const { recentEpisodes } = useContext(RecentEpisodesContext);
+
   return (
     <section className="anime-gallery">
       <h3>Recently Added</h3>
       <div className="anime-grid">
-        {Array.from(Array(8).keys()).map((anime, index) => (
-          <AnimeTile key={index} />
+        {recentEpisodes.map((anime) => (
+          <AnimeTile key={anime.id} anime={anime} />
         ))}
       </div>
     </section>

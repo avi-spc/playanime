@@ -9,7 +9,10 @@ const AlphanumericSearch = () => {
   return (
     <section className="alphanumeric-search">
       <div>Search by alphabets</div>
-      <Keypad keys={characters} type="alphanumeric" />
+      <Keypad
+        keys={characters.map((char) => [char, "ep.url"])}
+        type="alphanumeric"
+      />
     </section>
   );
 };

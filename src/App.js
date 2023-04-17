@@ -10,11 +10,12 @@ import Stream from "./pages/stream";
 import AZList from "./pages/azList";
 import TrendingList from "./components/TrendingList";
 import ActivityPath from "./components/ActivityPath";
+import BaseContextProvider from "./components/BaseContextProvider";
 
 const App = () => {
   return (
     <Router>
-      <CharactersContextProvider>
+      <BaseContextProvider>
         <div className="App">
           <Navbar />
           <section className="hero">
@@ -28,7 +29,7 @@ const App = () => {
           <section className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/stream" element={<Stream />} />
+              <Route path="/stream/:animeId" element={<Stream />} />
               <Route path="/az-list" element={<AZList />} />
             </Routes>
           </section>
@@ -37,7 +38,7 @@ const App = () => {
           </section>
         </div>
         <Footer />
-      </CharactersContextProvider>
+      </BaseContextProvider>
     </Router>
   );
 };

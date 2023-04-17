@@ -1,7 +1,9 @@
 import Keypad from "./Keypad";
 
-const EpisodesCount = () => {
-  return <Keypad keys={Array.from(Array(20).keys())} type="numeric" />;
+const EpisodesCount = ({ episodes }) => {
+  return (
+    <Keypad keys={episodes.map((ep) => [ep.number, ep.url])} type="numeric" />
+  );
 };
 
 export default EpisodesCount;

@@ -175,7 +175,11 @@ h6 {
     border-radius: 3rem; }
   .anime-tile__name {
     font-size: 2rem;
-    font-weight: 600; }
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden; }
   .anime-tile .anime-overlay-details {
     display: none; }
   .anime-tile:hover > .anime-overlay-details {

@@ -6,4 +6,3 @@ const digits = Array.from(Array(10).keys());
 const extraPatterns = ["All", "#"];
 
 export const searchCharacters = extraPatterns.concat(digits).concat(alphabets);
-console.log(searchCharacters);
