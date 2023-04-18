@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
 
+  overflow: hidden;
+
   &--compact {
     gap: 4rem;
   }
@@ -25,7 +27,11 @@
     border-radius: $br-1;
 
     position: absolute;
-    top: calc(117%);
+    top: 117%;
+    z-index: 20;
+
+    max-height: 36rem;
+    overflow: auto;
   }
 }
 
@@ -78,6 +84,10 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    &__viewers {
+      margin-top: 0.5rem;
     }
   }
 }

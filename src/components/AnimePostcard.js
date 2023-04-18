@@ -1,14 +1,18 @@
+import { NavLink } from "react-router-dom";
+
 const AnimePostcard = ({ type, anime }) => {
   return (
-    <div className={`anime-postcard ${type}`}>
-      <img className="anime-postcard__image" src={anime.animeImg} />
-      <div className="anime-postcard__name">{anime.animeTitle}</div>
-      <div className="anime-postcard__viewers">
-        <span className="anime-postcard__viewers--count">
-          {type === "compact" ? anime.latestEp : "hello"}
-        </span>
+    <NavLink to={`/stream/${anime.animeId}`}>
+      <div className={`anime-postcard ${type}`}>
+        <img className="anime-postcard__image" src={anime.animeImg} />
+        <div className="anime-postcard__name">{anime.animeTitle}</div>
+        <div className="anime-postcard__viewers">
+          <span className="anime-postcard__viewers--count">
+            {type === "compact" ? anime.latestEp : anime.status.split(":")[1]}
+          </span>
+        </div>
       </div>
-    </div>
+    </NavLink>
   );
 };
 

@@ -43,6 +43,19 @@ a:link {
   color: #d9d9d9;
   text-decoration: none; }
 
+::-webkit-scrollbar {
+  width: 1rem; }
+
+/* Track */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 2rem;
+  background: #5a5a5e; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; }
+
 h2,
 h3,
 h4,
@@ -73,6 +86,9 @@ h6 {
 
 .active {
   font-weight: 700; }
+
+.hidden {
+  display: none; }
 
 .activity-path {
   grid-column: 1/-1;
@@ -187,7 +203,8 @@ h6 {
 
 .anime-list {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow: hidden; }
   .anime-list--compact {
     gap: 4rem; }
   .anime-list--broad {
@@ -203,7 +220,10 @@ h6 {
     background-color: #2c2c2c;
     border-radius: 2rem;
     position: absolute;
-    top: calc(117%); }
+    top: 117%;
+    z-index: 20;
+    max-height: 36rem;
+    overflow: auto; }
 
 .anime-postcard {
   display: grid;
@@ -239,6 +259,9 @@ h6 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+
+.search .anime-postcard__viewers {
+  margin-top: 0.5rem; }
 
 .anime-stream {
   display: flex;
@@ -340,6 +363,7 @@ h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   margin-bottom: 5rem;
   font-size: 2rem;
   font-weight: 300; }
@@ -365,6 +389,8 @@ h6 {
     .navbar__search-p-user .search-form {
       flex-basis: 100%;
       position: relative; }
+      .navbar__search-p-user .search-form input[type="text"]:not(:focus) ~ .anime-list--search:not(:hover) {
+        display: none; }
       .navbar__search-p-user .search-form input {
         font-family: "Quicksand", sans-serif;
         font-size: 2rem;
@@ -376,10 +402,16 @@ h6 {
         width: 100%; }
         .navbar__search-p-user .search-form input:focus {
           outline: none; }
-      .navbar__search-p-user .search-form .input-search-group {
-        position: relative; }
       .navbar__search-p-user .search-form .search-icon {
         position: absolute;
         top: 50%;
         right: 2rem;
         transform: translateY(-50%); }
+
+.background-blur {
+  position: absolute;
+  top: 100%;
+  z-index: 15;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(30, 30, 30, 0.8); }
