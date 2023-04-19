@@ -21,7 +21,7 @@ const App = () => {
           <section className="hero">
             <Routes>
               {["/stream", "/az-list"].map((path) => (
-                <Route path={path} element={<ActivityPath />} />
+                <Route path={path} element={<ActivityPath />} key={path} />
               ))}
               <Route path="/" element={<FeaturedAnime />} />
             </Routes>

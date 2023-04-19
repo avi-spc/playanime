@@ -1,11 +1,16 @@
 import { NavLink } from "react-router-dom";
+import { captalizeEachWord } from "../utils/capitalize";
 
 const AnimePostcard = ({ type, anime }) => {
   return (
     <NavLink to={`/stream/${anime.animeId}`}>
       <div className={`anime-postcard ${type}`}>
         <img className="anime-postcard__image" src={anime.animeImg} />
-        <div className="anime-postcard__name">{anime.animeTitle}</div>
+        <div className="anime-postcard__name">
+          {anime.animeTitle !== ""
+            ? anime.animeTitle
+            : captalizeEachWord(anime.animeId.replaceAll("-", " "))}
+        </div>
         <div className="anime-postcard__viewers">
           <span className="anime-postcard__viewers--count">
             {type === "compact" ? anime.latestEp : anime.status.split(":")[1]}

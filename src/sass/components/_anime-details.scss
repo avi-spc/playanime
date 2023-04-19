@@ -36,6 +36,8 @@
     flex-direction: column;
     gap: 3rem;
 
+    flex-basis: 100%;
+
     &__meta {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, max-content));

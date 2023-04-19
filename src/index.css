@@ -129,7 +129,8 @@ h6 {
   .anime-details__info {
     display: flex;
     flex-direction: column;
-    gap: 3rem; }
+    gap: 3rem;
+    flex-basis: 100%; }
     .anime-details__info__meta {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, max-content));

@@ -12,10 +12,9 @@ const Keypad = ({ keys, type, animeId }) => {
             className={`${
               queryParams.get("ep") === keyUrl ? "active-button" : ""
             }`}
+            key={keyName}
           >
-            <button className="btn btn--sm" key={keyName}>
-              {keyName}
-            </button>
+            <button className="btn btn--sm">{keyName}</button>
           </NavLink>
         );
       })}
