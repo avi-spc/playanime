@@ -8,6 +8,7 @@ const Navbar = () => {
   const [searchData, setSearchData] = useState([]);
 
   const backgroundBlurRef = useRef();
+  const abortController = useRef(new AbortController());
 
   const displayBlur = (isBlurred) => {
     if (isBlurred) {
@@ -20,13 +21,23 @@ const Navbar = () => {
   };
 
   const fetchSearchResults = async () => {
-    const res = await fetch(
-      `https://gogoanime.consumet.stream/search?keyw=${searchString}`
-    );
+    if (!searchString.length) {
+      abortController.current.abort();
+      abortController.current = new AbortController();
+    }
 
-    const searchResults = await res.json();
+    try {
+      const res = await fetch(
+        `https://gogoanime.consumet.stream/search?keyw=${searchString}`,
+        { signal: abortController.current.signal }
+      );
 
-    setSearchData(searchResults);
+      const searchResults = await res.json();
+
+      setSearchData(searchResults);
+    } catch (error) {
+      if (error.name === "AbortError") return;
+    }
   };
 
   useEffect(() => {
@@ -62,7 +73,7 @@ const Navbar = () => {
             src="./images/icons/search.png"
             alt=""
           />
-          {searchData.length > 0 && (
+          {searchData.length > 0 && searchString.length && (
             <AnimeList type="search" data={searchData} />
           )}
         </form>
