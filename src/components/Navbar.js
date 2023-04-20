@@ -61,6 +61,7 @@ const Navbar = () => {
           className="search-form"
           onFocus={() => displayBlur(true)}
           onBlur={() => displayBlur(false)}
+          onSubmit={(e) => e.preventDefault()}
         >
           <input
             type="text"
@@ -73,7 +74,7 @@ const Navbar = () => {
             src="./images/icons/search.png"
             alt=""
           />
-          {searchData.length > 0 && searchString.length && (
+          {searchData.length > 0 && searchString.length > 0 && (
             <AnimeList type="search" data={searchData} />
           )}
         </form>

@@ -38,6 +38,13 @@
 
     flex-basis: 100%;
 
+    &__synopsis {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
     &__meta {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, max-content));

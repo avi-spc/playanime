@@ -11,7 +11,7 @@ const RecentEpisodesContextProvider = (props) => {
     );
     const animeList = (await res.json()).results;
 
-    setRecentEpisodes(animeList.splice(0, 16));
+    setRecentEpisodes(animeList);
   };
 
   useEffect(() => {

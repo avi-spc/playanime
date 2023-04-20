@@ -9,6 +9,10 @@
     padding-right: 2rem;
 
     border-radius: $br-2;
+
+    &:hover {
+      background-color: $surface-4;
+    }
   }
 
   &--sm {
@@ -33,6 +37,10 @@
 
   &--trans {
     background-color: transparent;
+
+    &:hover {
+      filter: invert(20%);
+    }
   }
 
   img {
