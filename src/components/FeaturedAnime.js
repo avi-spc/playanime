@@ -20,14 +20,14 @@ const FeaturedAnime = () => {
       <section className="featured-anime">
         <img
           className="featured-anime__image"
-          src={featuredAnime[activeIndex].image}
+          src={featuredAnime[activeIndex].animeImg}
           alt=""
         />
         <div className="anime-details">
           <div className="anime-details__info">
-            <h2>{featuredAnime[activeIndex].title}</h2>
+            <h2>{featuredAnime[activeIndex].animeTitle}</h2>
             <p className="anime-details__info__synopsis">
-              {featuredAnime[activeIndex].description}
+              {featuredAnime[activeIndex].synopsis}
             </p>
             <div className="anime-details__info__meta">
               <div>
@@ -50,7 +50,7 @@ const FeaturedAnime = () => {
               </div>
             </div>
             <div className="anime-details__cta">
-              <NavLink to={`/stream/${featuredAnime[activeIndex].id}`}>
+              <NavLink to={`/stream/${featuredAnime[activeIndex].animeId}`}>
                 <button className="btn btn--watch">
                   <img src="./images/icons/play.png" alt="" />
                   <h5>Watch</h5>

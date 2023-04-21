@@ -5,13 +5,13 @@ import { captalizeEachWord } from "../utils/capitalize";
 
 const AnimeTile = ({ anime }) => {
   return (
-    <NavLink to={`/stream/${anime.id}`}>
+    <NavLink to={`/stream/${anime.animeId}`}>
       <div className="anime-tile">
-        <img className="anime-tile__image" src={anime.image} alt="" />
+        <img className="anime-tile__image" src={anime.animeImg} alt="" />
         <div className="anime-tile__name">
-          {anime.title !== ""
-            ? anime.title
-            : captalizeEachWord(anime.id.replaceAll("-", " "))}
+          {anime.animeTitle !== ""
+            ? anime.animeTitle
+            : captalizeEachWord(anime.animeId.replaceAll("-", " "))}
         </div>
         <AnimeOverlayDetails />
       </div>

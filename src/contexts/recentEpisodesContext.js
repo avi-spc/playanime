@@ -6,10 +6,8 @@ const RecentEpisodesContextProvider = (props) => {
   const [recentEpisodes, setRecentEpisodes] = useState([]);
 
   const populateRecentEpisodes = async () => {
-    const res = await fetch(
-      "https://api.consumet.org/anime/gogoanime/recent-episodes"
-    );
-    const animeList = (await res.json()).results;
+    const res = await fetch("https://gogoanime.consumet.stream/recent-release");
+    const animeList = await res.json();
 
     setRecentEpisodes(animeList);
   };

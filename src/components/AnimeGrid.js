@@ -11,7 +11,7 @@ const AnimeGrid = () => {
       <h3>Recently Added</h3>
       <div className="anime-grid">
         {recentEpisodes.slice(4, 20).map((anime) => (
-          <AnimeTile key={anime.id} anime={anime} />
+          <AnimeTile key={anime.animeId} anime={anime} />
         ))}
       </div>
     </section>

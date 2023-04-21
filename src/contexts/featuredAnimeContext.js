@@ -11,17 +11,19 @@ const FeaturedAnimeContextProvider = (props) => {
 
   const populateAnimeData = async (animeId) => {
     const res = await fetch(
-      `https://api.consumet.org/anime/gogoanime/info/${animeId}`
+      `https://gogoanime.consumet.stream/anime-details/${animeId}`
     );
 
     const animeData = await res.json();
+    animeData.animeId = animeId;
 
     setFeaturedAnime((data) => [...data, animeData]);
   };
 
   useEffect(() => {
-    recentEpisodes.slice(0, 4).forEach((anime) => populateAnimeData(anime.id));
-    console.log(recentEpisodes.slice(0, 4));
+    recentEpisodes
+      .slice(0, 4)
+      .forEach((anime) => populateAnimeData(anime.animeId));
   }, [recentEpisodes]);
 
   return (
