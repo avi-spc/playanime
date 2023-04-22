@@ -191,13 +191,26 @@ h6 {
   flex-direction: column;
   gap: 2rem;
   align-items: center; }
+  .anime-tile__img-p-overlay {
+    position: relative;
+    border-radius: 3rem;
+    overflow: hidden; }
   .anime-tile__image {
     width: 25rem;
-    height: 25rem;
-    border-radius: 3rem; }
+    height: 25rem; }
+  .anime-tile__hover-overlay {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); }
   .anime-tile__name {
     font-size: 2rem;
     font-weight: 600;
+    text-align: center;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -206,6 +219,8 @@ h6 {
     display: none; }
   .anime-tile:hover > .anime-overlay-details {
     display: flex; }
+  .anime-tile:hover .anime-tile__hover-overlay {
+    display: block !important; }
 
 .anime-list {
   display: flex;

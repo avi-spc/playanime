@@ -18,16 +18,37 @@
   gap: 2rem;
   align-items: center;
 
+  &__img-p-overlay {
+    position: relative;
+    border-radius: $br-3;
+
+    overflow: hidden;
+  }
+
   &__image {
     width: 25rem;
     height: 25rem;
+  }
 
-    border-radius: $br-3;
+  &__hover-overlay {
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(#000, 0.4);
   }
 
   &__name {
     font-size: 2rem;
     font-weight: 600;
+
+    text-align: center;
 
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -41,5 +62,9 @@
 
   &:hover > .anime-overlay-details {
     display: flex;
+  }
+
+  &:hover .anime-tile__hover-overlay {
+    display: block !important;
   }
 }
