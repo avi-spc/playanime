@@ -1,7 +1,7 @@
-const AnimeOverlayDetails = () => {
+const AnimeOverlayDetails = ({ details }) => {
   return (
     <div className="anime-overlay-details">
-      <h4>Skip and Loafer</h4>
+      <h4>{details.animeTitle}</h4>
       <p className="anime-overlay-details__synopsis">
         The second season of Mahoutsukai no Yome. Chise was able to accept Elias
         and herself, if not necessarily everything about her situation. After
@@ -10,12 +10,10 @@ const AnimeOverlayDetails = () => {
         from a mutual aid organization for mages called the College.
       </p>
       <div className="anime-overlay-details__meta">
-        <div className="meta-type">Studio</div>
-        <div className="meta-value">CygamesPictures</div>
         <div className="meta-type">Episodes</div>
-        <div className="meta-value">12</div>
+        <div className="meta-value">{details.totalEpisodes}</div>
         <div className="meta-type">Genre</div>
-        <div className="meta-value">Comedy</div>
+        <div className="meta-value">{details.genres.join(", ")}</div>
         <div className="meta-type">Date Aired</div>
         <div className="meta-value">Apr 6, 2023</div>
       </div>

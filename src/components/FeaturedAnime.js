@@ -52,7 +52,7 @@ const FeaturedAnime = () => {
             <div className="anime-details__cta">
               <NavLink to={`/stream/${featuredAnime[activeIndex].animeId}`}>
                 <button className="btn btn--watch">
-                  <img src="./images/icons/play.png" alt="" />
+                  <img src="/images/icons/play.png" alt="" />
                   <h5>Watch</h5>
                 </button>
               </NavLink>
@@ -61,13 +61,13 @@ const FeaturedAnime = () => {
                   className="btn btn--trans"
                   onClick={() => updateActiveIndex(-1)}
                 >
-                  <img src="./images/icons/arrow_left.png" alt="" />
+                  <img src="/images/icons/arrow_left.png" alt="" />
                 </button>
                 <button
                   className="btn btn--trans"
                   onClick={() => updateActiveIndex(1)}
                 >
-                  <img src="./images/icons/arrow_right.png" alt="" />
+                  <img src="/images/icons/arrow_right.png" alt="" />
                 </button>
               </div>
             </div>

@@ -2,8 +2,9 @@ import { NavLink } from "react-router-dom";
 
 import AnimeOverlayDetails from "./AnimeOverlayDetails";
 import { captalizeEachWord } from "../utils/capitalize";
+import { useState } from "react";
 
-const AnimeTile = ({ anime }) => {
+const AnimeTile = ({ anime, details }) => {
   return (
     <NavLink to={`/stream/${anime.animeId}`}>
       <div className="anime-tile">
@@ -13,7 +14,7 @@ const AnimeTile = ({ anime }) => {
             ? anime.animeTitle
             : captalizeEachWord(anime.animeId.replaceAll("-", " "))}
         </div>
-        <AnimeOverlayDetails />
+        {details && <AnimeOverlayDetails details={details} />}
       </div>
     </NavLink>
   );

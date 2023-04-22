@@ -71,14 +71,14 @@ const Navbar = () => {
           />
           <img
             className="icon search-icon"
-            src="./images/icons/search.png"
+            src="/images/icons/search.png"
             alt=""
           />
           {searchData.length > 0 && searchString.length > 0 && (
             <AnimeList type="search" data={searchData} />
           )}
         </form>
-        <img className="icon user-icon" src="./images/icons/user.png" alt="" />
+        <img className="icon user-icon" src="/images/icons/user.png" alt="" />
       </div>
       <div className="background-blur hidden" ref={backgroundBlurRef} />
     </nav>

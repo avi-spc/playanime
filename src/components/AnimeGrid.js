@@ -4,14 +4,22 @@ import AnimeTile from "./AnimeTile";
 import { RecentEpisodesContext } from "../contexts/recentEpisodesContext";
 
 const AnimeGrid = () => {
-  const { recentEpisodes } = useContext(RecentEpisodesContext);
+  const { recentEpisodes, recentEpisodesDetails } = useContext(
+    RecentEpisodesContext
+  );
 
   return (
     <section className="anime-gallery">
       <h3>Recently Added</h3>
       <div className="anime-grid">
-        {recentEpisodes.slice(4, 20).map((anime) => (
-          <AnimeTile key={anime.animeId} anime={anime} />
+        {recentEpisodes.slice(4, 20).map((anime, i) => (
+          <AnimeTile
+            key={anime.animeId}
+            anime={anime}
+            details={recentEpisodesDetails.find(
+              (details) => details.animeTitle === anime.animeTitle
+            )}
+          />
         ))}
       </div>
     </section>
