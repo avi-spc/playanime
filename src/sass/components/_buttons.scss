@@ -15,6 +15,18 @@
     }
   }
 
+  &--genre {
+    font-size: 2.4rem;
+    font-weight: 500;
+
+    padding: 1.5rem 2.5rem;
+    border-radius: $br-1;
+
+    &:hover {
+      background-color: $surface-4;
+    }
+  }
+
   &--sm {
     font-size: 2.4rem;
     font-weight: 500;

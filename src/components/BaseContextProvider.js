@@ -4,6 +4,7 @@ import CharactersContextProvider from "../contexts/charactersContext";
 import TrendingContextProvider from "../contexts/trendingContext";
 import RecentEpisodesContextProvider from "../contexts/recentEpisodesContext";
 import FeaturedAnimeContextProvider from "../contexts/featuredAnimeContext";
+import GenreContextProvider from "../contexts/genreContextProvider";
 
 const BaseContextProvider = (props) => {
   return (
@@ -11,9 +12,11 @@ const BaseContextProvider = (props) => {
       <RecentEpisodesContextProvider>
         <FeaturedAnimeContextProvider>
           <TrendingContextProvider>
-            <CharactersContextProvider>
-              {props.children}
-            </CharactersContextProvider>
+            <GenreContextProvider>
+              <CharactersContextProvider>
+                {props.children}
+              </CharactersContextProvider>
+            </GenreContextProvider>
           </TrendingContextProvider>
         </FeaturedAnimeContextProvider>
       </RecentEpisodesContextProvider>

@@ -1,0 +1,42 @@
+.genre-dropdown {
+  position: relative;
+
+  &__active-genre {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    background-color: $surface-2;
+    padding: 1rem;
+    border-radius: $br-2;
+
+    width: fit-content;
+  }
+
+  &__genre-list {
+    position: absolute;
+    top: 115%;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+
+    display: none;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+
+    background-color: $surface-3;
+    padding: 1rem;
+    border-radius: $br-2;
+  }
+
+  img {
+    width: 3rem;
+    height: 3rem;
+
+    transform: rotate(90deg);
+  }
+
+  button {
+    text-transform: capitalize;
+  }
+}

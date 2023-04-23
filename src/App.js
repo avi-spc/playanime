@@ -11,6 +11,7 @@ import AZList from "./pages/azList";
 import TrendingList from "./components/TrendingList";
 import ActivityPath from "./components/ActivityPath";
 import BaseContextProvider from "./components/BaseContextProvider";
+import GenreDropdown from "./components/GenreDropdown";
 
 const App = () => {
   return (
