@@ -47,24 +47,6 @@
         display: none;
       }
 
-      input {
-        font-family: "Quicksand", sans-serif;
-        font-size: 2rem;
-
-        padding: 2rem 2.5rem;
-        color: $text-primary;
-        background-color: $surface-2;
-
-        border-radius: $br-1;
-        border: none;
-
-        width: 100%;
-
-        &:focus {
-          outline: none;
-        }
-      }
-
       .search-icon {
         position: absolute;
         top: 50%;

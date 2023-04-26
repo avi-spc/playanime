@@ -46,6 +46,18 @@ a:link {
 ::-webkit-scrollbar {
   width: 1rem; }
 
+input {
+  font-family: "Quicksand", sans-serif;
+  font-size: 2rem;
+  padding: 2rem 2.5rem;
+  color: #d9d9d9;
+  background-color: #242424;
+  border-radius: 2rem;
+  border: none;
+  width: 100%; }
+  input:focus {
+    outline: none; }
+
 /* Track */
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -229,6 +241,7 @@ h6 {
   .anime-list--compact {
     gap: 4rem; }
   .anime-list--broad {
+    margin-top: 5rem;
     gap: 1.5rem; }
     .anime-list--broad .anime-postcard {
       background-color: #242424;
@@ -250,6 +263,8 @@ h6 {
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: 0 2rem; }
+  .anime-postcard.broad {
+    align-items: center; }
   .anime-postcard__image {
     width: 9.3rem;
     height: 9.3rem;
@@ -292,8 +307,17 @@ h6 {
   .anime-stream iframe {
     border-radius: 5rem;
     aspect-ratio: 16/9; }
+  .anime-stream .upcoming-status {
+    border-radius: 3rem;
+    overflow: hidden; }
+    .anime-stream .upcoming-status h3 {
+      padding: 3rem 0;
+      background-color: #242424;
+      text-align: center;
+      margin: 0; }
 
 .btn {
+  font-family: inherit;
   color: #d9d9d9;
   background-color: #2c2c2c;
   border: none;
@@ -305,8 +329,8 @@ h6 {
     .btn--watch:hover {
       background-color: #353535; }
   .btn--genre {
-    font-size: 2.4rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 600;
     padding: 1.5rem 2.5rem;
     border-radius: 2rem; }
     .btn--genre:hover {
@@ -383,17 +407,19 @@ h6 {
     padding: 1rem;
     border-radius: 2.5rem;
     width: fit-content; }
+    .genre-dropdown__active-genre .btn--genre:not(:focus) ~ .genre-dropdown__genre-list:not(:hover) {
+      display: none; }
   .genre-dropdown__genre-list {
     position: absolute;
     top: 115%;
     left: 0;
     z-index: 5;
     width: 100%;
-    display: none;
+    display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 1rem;
     background-color: #2c2c2c;
-    padding: 1rem;
+    padding: 2rem 1rem;
     border-radius: 2.5rem; }
   .genre-dropdown img {
     width: 3rem;
@@ -452,17 +478,6 @@ h6 {
       position: relative; }
       .navbar__search-p-user .search-form input[type="text"]:not(:focus) ~ .anime-list--search:not(:hover) {
         display: none; }
-      .navbar__search-p-user .search-form input {
-        font-family: "Quicksand", sans-serif;
-        font-size: 2rem;
-        padding: 2rem 2.5rem;
-        color: #d9d9d9;
-        background-color: #242424;
-        border-radius: 2rem;
-        border: none;
-        width: 100%; }
-        .navbar__search-p-user .search-form input:focus {
-          outline: none; }
       .navbar__search-p-user .search-form .search-icon {
         position: absolute;
         top: 50%;

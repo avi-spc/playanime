@@ -11,6 +11,10 @@
     border-radius: $br-2;
 
     width: fit-content;
+
+    .btn--genre:not(:focus) ~ .genre-dropdown__genre-list:not(:hover) {
+      display: none;
+    }
   }
 
   &__genre-list {
@@ -20,12 +24,12 @@
     z-index: 5;
     width: 100%;
 
-    display: none;
+    display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 1rem;
 
     background-color: $surface-3;
-    padding: 1rem;
+    padding: 2rem 1rem;
     border-radius: $br-2;
   }
 

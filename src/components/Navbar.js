@@ -50,7 +50,7 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/ongoing">Ongoing</NavLink>
         <NavLink to="/upcoming">Upcoming</NavLink>
-        <NavLink to="/genres">Genres</NavLink>
+        <NavLink to="/genre/action">Genres</NavLink>
       </div>
       <div className="navbar__logo">
         <div className="navbar__logo--primary">play</div>

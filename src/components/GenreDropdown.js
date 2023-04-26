@@ -1,24 +1,32 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 
 import { GenreContext } from "../contexts/genreContextProvider";
+import { NavLink, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { captalizeEachWord } from "../utils/capitalize";
 
 const GenreDropdown = () => {
-  const { genres } = useContext(GenreContext);
+  const { genres, updateGenre } = useContext(GenreContext);
+  const { genreId } = useParams();
+
+  useEffect(() => {
+    updateGenre(genreId);
+  }, [genreId]);
 
   return (
-    <span className="genre-dropdown">
+    <div className="genre-dropdown">
       <div className="genre-dropdown__active-genre">
-        <button className="btn btn--genre ">Action</button>
+        <button className="btn btn--genre">{captalizeEachWord(genreId)}</button>
         <img src="/images/icons/arrow_right.png" alt="" />
+        <div className="genre-dropdown__genre-list">
+          {genres.map((genre) => (
+            <NavLink to={`/genre/${genre}`} key={genre}>
+              <button className="btn btn--genre">{genre}</button>
+            </NavLink>
+          ))}
+        </div>
       </div>
-      <div className="genre-dropdown__genre-list">
-        {genres.map((genre) => (
-          <button className="btn btn--sm" key={genre}>
-            {genre}
-          </button>
-        ))}
-      </div>
-    </span>
+    </div>
   );
 };
 

@@ -9,6 +9,7 @@
   }
 
   &--broad {
+    margin-top: 5rem;
     gap: 1.5rem;
 
     .anime-postcard {
@@ -39,6 +40,10 @@
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: 0 2rem;
+
+  &.broad {
+    align-items: center;
+  }
 
   &__image {
     width: 9.3rem;

@@ -41,7 +41,7 @@ const AnimeStream = () => {
     animeData.animeId = animeId;
     animeData.episodesList = animeData.episodesList.reverse();
 
-    if (!queryParams.get("ep"))
+    if (!queryParams.get("ep") && animeData.status !== "Upcoming")
       navigate({
         pathname: `/stream/${animeId}`,
         search: `?ep=${animeData.episodesList[0].episodeId}`,
@@ -61,13 +61,15 @@ const AnimeStream = () => {
   return (
     anime && (
       <section className="anime-stream main-content">
-        <iframe
-          src={streamUrl}
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          allowFullScreen="true"
-        ></iframe>
+        {anime.status !== "Upcoming" && (
+          <iframe
+            src={streamUrl}
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            allowFullScreen={true}
+          ></iframe>
+        )}
         <EpisodesCount anime={anime} />
         <AnimeDetails anime={anime} />
       </section>

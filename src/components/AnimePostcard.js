@@ -2,6 +2,17 @@ import { NavLink } from "react-router-dom";
 import { captalizeEachWord } from "../utils/capitalize";
 
 const AnimePostcard = ({ type, anime }) => {
+  const displayExtraInfo = (type) => {
+    switch (type) {
+      case "compact":
+        return anime.latestEp;
+      case "broad":
+        return anime.releasedDate;
+      case "search":
+        return anime.status.split(":")[1];
+    }
+  };
+
   return (
     <NavLink to={`/stream/${anime.animeId}`}>
       <div className={`anime-postcard ${type}`}>
@@ -13,7 +24,7 @@ const AnimePostcard = ({ type, anime }) => {
         </div>
         <div className="anime-postcard__viewers">
           <span className="anime-postcard__viewers--count">
-            {type === "compact" ? anime.latestEp : anime.status.split(":")[1]}
+            {displayExtraInfo(type)}
           </span>
         </div>
       </div>
@@ -22,5 +33,3 @@ const AnimePostcard = ({ type, anime }) => {
 };
 
 export default AnimePostcard;
-
-//"https://img.bunnycdnn.ru/_r/300x400/100/f1/21/f121f498b3be50b194236f055c97c6df/f121f498b3be50b194236f055c97c6df.jpg

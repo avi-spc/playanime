@@ -2,8 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import FeaturedAnime from "./components/FeaturedAnime";
 import Navbar from "./components/Navbar";
-import CharactersContextProvider from "./contexts/charactersContext";
-import AnimeList from "./components/AnimeList";
+
 import Footer from "./components/Footer";
 import Home from "./pages/home";
 import Stream from "./pages/stream";
@@ -11,7 +10,7 @@ import AZList from "./pages/azList";
 import TrendingList from "./components/TrendingList";
 import ActivityPath from "./components/ActivityPath";
 import BaseContextProvider from "./components/BaseContextProvider";
-import GenreDropdown from "./components/GenreDropdown";
+import Genres from "./pages/genres";
 
 const App = () => {
   return (
@@ -32,6 +31,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/stream/:animeId" element={<Stream />} />
               <Route path="/az-list" element={<AZList />} />
+              <Route path="/genre/:genreId" element={<Genres />} />
             </Routes>
           </section>
           <section className="sidebar">

@@ -1,4 +1,6 @@
 .btn {
+  font-family: inherit;
+  
   color: $text-primary;
   background-color: $surface-3;
   border: none;
@@ -16,8 +18,8 @@
   }
 
   &--genre {
-    font-size: 2.4rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 600;
 
     padding: 1.5rem 2.5rem;
     border-radius: $br-1;

@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 
 export const GenreContext = createContext();
 
@@ -78,8 +79,26 @@ const GenreContextProvider = (props) => {
     "yuri",
   ]);
 
+  const [genre, setGenre] = useState(genres[0]);
+  const [searchedGenreAnime, setSearchedGenreAnime] = useState([]);
+
+  const fetchGenreAnime = async () => {
+    const res = await fetch(`https://gogoanime.consumet.stream/genre/${genre}`);
+    const animeList = await res.json();
+
+    setSearchedGenreAnime(animeList);
+  };
+
+  const updateGenre = (genreId) => {
+    setGenre(genreId);
+  };
+
+  useEffect(() => {
+    fetchGenreAnime();
+  }, [genre]);
+
   return (
-    <GenreContext.Provider value={{ genres }}>
+    <GenreContext.Provider value={{ genres, searchedGenreAnime, updateGenre }}>
       {props.children}
     </GenreContext.Provider>
   );
