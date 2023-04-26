@@ -1,0 +1,28 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 5rem;
+
+  font-size: 2rem;
+  font-weight: 300;
+
+  & > :first-child {
+    margin-right: 4rem;
+  }
+
+  & > :last-child {
+    margin-left: 4rem;
+  }
+
+  input {
+    display: inline-block;
+    align-self: stretch;
+    width: 7%;
+    margin: 0 2rem;
+
+    text-align: center;
+    font-weight: 600;
+  }
+}

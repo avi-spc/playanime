@@ -5,7 +5,7 @@
 
   margin-bottom: 10rem;
 
-  iframe {
+  &__video-frame {
     border-radius: $br-6;
     aspect-ratio: 16/9;
   }
@@ -13,7 +13,7 @@
   .upcoming-status {
     border-radius: $br-3;
     overflow: hidden;
-    
+
     h3 {
       padding: 3rem 0;
       background-color: $surface-2;

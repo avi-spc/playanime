@@ -63,6 +63,7 @@ const AnimeStream = () => {
       <section className="anime-stream main-content">
         {anime.status !== "Upcoming" && (
           <iframe
+            className="anime-stream__video-frame"
             src={streamUrl}
             frameborder="0"
             marginheight="0"

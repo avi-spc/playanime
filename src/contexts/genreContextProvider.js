@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
 export const GenreContext = createContext();
@@ -82,11 +82,23 @@ const GenreContextProvider = (props) => {
   const [genre, setGenre] = useState(genres[0]);
   const [searchedGenreAnime, setSearchedGenreAnime] = useState([]);
 
-  const fetchGenreAnime = async () => {
-    const res = await fetch(`https://gogoanime.consumet.stream/genre/${genre}`);
-    const animeList = await res.json();
+  const abortController = useRef(new AbortController());
 
-    setSearchedGenreAnime(animeList);
+  const fetchGenreAnime = async (page = 1) => {
+    abortController.current.abort();
+    abortController.current = new AbortController();
+
+    try {
+      const res = await fetch(
+        `https://gogoanime.consumet.stream/genre/${genre}?page=${page}`,
+        { signal: abortController.current.signal }
+      );
+      const animeList = await res.json();
+
+      setSearchedGenreAnime(animeList);
+    } catch (error) {
+      if (error.name === "AbortError") return;
+    }
   };
 
   const updateGenre = (genreId) => {
@@ -94,11 +106,13 @@ const GenreContextProvider = (props) => {
   };
 
   useEffect(() => {
-    fetchGenreAnime();
+    // fetchGenreAnime();
   }, [genre]);
 
   return (
-    <GenreContext.Provider value={{ genres, searchedGenreAnime, updateGenre }}>
+    <GenreContext.Provider
+      value={{ genre, genres, searchedGenreAnime, updateGenre, fetchGenreAnime }}
+    >
       {props.children}
     </GenreContext.Provider>
   );
