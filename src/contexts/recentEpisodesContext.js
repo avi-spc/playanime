@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
+import axios from "../utils/axiosInstance";
+
 export const RecentEpisodesContext = createContext();
 
 const RecentEpisodesContextProvider = (props) => {
@@ -7,17 +9,15 @@ const RecentEpisodesContextProvider = (props) => {
   const [recentEpisodesDetails, setRecentEpisodesDetails] = useState([]);
 
   const populateRecentEpisodes = async () => {
-    const res = await fetch("https://gogoanime.consumet.stream/recent-release");
-    const animeList = await res.json();
+    const res = await axios("recent-release");
+    const animeList = res.data;
 
     setRecentEpisodes(animeList);
   };
 
   const populateRecentEpisodesDetails = async (animeId) => {
-    const res = await fetch(
-      `https://gogoanime.consumet.stream/anime-details/${animeId}`
-    );
-    const animeDeatils = await res.json();
+    const res = await axios(`anime-details/${animeId}`);
+    const animeDeatils = res.data;
 
     setRecentEpisodesDetails((prevDetails) => [...prevDetails, animeDeatils]);
   };

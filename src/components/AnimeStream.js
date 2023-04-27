@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams, useSearchParams, useNavigate } from "react-router-dom";
 
+import axios from "../utils/axiosInstance";
+
 import AnimeDetails from "./AnimeDetails";
 import EpisodesCount from "./EpisodesCount";
 
@@ -19,12 +21,10 @@ const AnimeStream = () => {
     abortController.current = new AbortController();
 
     try {
-      const res = await fetch(
-        `https://gogoanime.consumet.stream/vidcdn/watch/${episodeId}`,
-        { signal: abortController.current.signal }
-      );
-
-      const url = (await res.json()).Referer;
+      const res = await axios(`vidcdn/watch/${episodeId}`, {
+        signal: abortController.current.signal,
+      });
+      const url = res.data.Referer;
 
       setStreamUrl(url);
     } catch (error) {
@@ -33,11 +33,9 @@ const AnimeStream = () => {
   };
 
   const populateAnimeData = async () => {
-    const res = await fetch(
-      `https://gogoanime.consumet.stream/anime-details/${animeId}`
-    );
+    const res = await axios(`anime-details/${animeId}`);
+    const animeData = res.data;
 
-    const animeData = await res.json();
     animeData.animeId = animeId;
     animeData.episodesList = animeData.episodesList.reverse();
 

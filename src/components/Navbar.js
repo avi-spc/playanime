@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
+import axios from "../utils/axiosInstance";
+
 import AnimeList from "./AnimeList";
 
 const Navbar = () => {
@@ -27,12 +29,10 @@ const Navbar = () => {
     }
 
     try {
-      const res = await fetch(
-        `https://gogoanime.consumet.stream/search?keyw=${searchString}`,
-        { signal: abortController.current.signal }
-      );
-
-      const searchResults = await res.json();
+      const res = await axios(`search?keyw=${searchString}`, {
+        signal: abortController.current.signal,
+      });
+      const searchResults = res.data;
 
       setSearchData(searchResults);
     } catch (error) {

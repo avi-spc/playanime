@@ -1,13 +1,15 @@
 import { createContext, useEffect, useState } from "react";
 
+import axios from "../utils/axiosInstance";
+
 export const TrendingContext = createContext();
 
 const TrendingContextProvider = (props) => {
   const [trendingAnime, setTrendingAnime] = useState([]);
 
   const populateTrendingAnime = async () => {
-    const res = await fetch("https://gogoanime.consumet.stream/top-airing");
-    const animeList = await res.json();
+    const res = await axios("top-airing");
+    const animeList = res.data;
 
     setTrendingAnime(animeList);
   };

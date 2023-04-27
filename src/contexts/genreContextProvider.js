@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+
+import axios from "../utils/axiosInstance";
 
 export const GenreContext = createContext();
 
@@ -89,11 +90,10 @@ const GenreContextProvider = (props) => {
     abortController.current = new AbortController();
 
     try {
-      const res = await fetch(
-        `https://gogoanime.consumet.stream/genre/${genre}?page=${page}`,
-        { signal: abortController.current.signal }
-      );
-      const animeList = await res.json();
+      const res = await axios(`genre/${genre}?page=${page}`, {
+        signal: abortController.current.signal,
+      });
+      const animeList = res.data;
 
       setSearchedGenreAnime(animeList);
     } catch (error) {
@@ -106,12 +106,18 @@ const GenreContextProvider = (props) => {
   };
 
   useEffect(() => {
-    // fetchGenreAnime();
+    fetchGenreAnime();
   }, [genre]);
 
   return (
     <GenreContext.Provider
-      value={{ genre, genres, searchedGenreAnime, updateGenre, fetchGenreAnime }}
+      value={{
+        genre,
+        genres,
+        searchedGenreAnime,
+        updateGenre,
+        fetchGenreAnime,
+      }}
     >
       {props.children}
     </GenreContext.Provider>

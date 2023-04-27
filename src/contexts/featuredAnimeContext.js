@@ -1,6 +1,7 @@
 import { useEffect, useState, createContext, useContext } from "react";
 
 import { RecentEpisodesContext } from "./recentEpisodesContext";
+import axios from "../utils/axiosInstance";
 
 export const FeaturedAnimeContext = createContext();
 
@@ -10,11 +11,9 @@ const FeaturedAnimeContextProvider = (props) => {
   const [featuredAnime, setFeaturedAnime] = useState([]);
 
   const populateAnimeData = async (animeId) => {
-    const res = await fetch(
-      `https://gogoanime.consumet.stream/anime-details/${animeId}`
-    );
-
-    const animeData = await res.json();
+    const res = await axios(`anime-details/${animeId}`);
+    const animeData = res.data;
+    
     animeData.animeId = animeId;
 
     setFeaturedAnime((data) => [...data, animeData]);

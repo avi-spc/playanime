@@ -17,7 +17,11 @@ const AnimeGrid = () => {
             key={anime.animeId}
             anime={anime}
             details={recentEpisodesDetails.find(
-              (details) => details.animeTitle === anime.animeTitle
+              (details) =>
+                details.animeTitle === anime.animeTitle ||
+                details.animeTitle
+                  .toLowerCase()
+                  .includes(anime.animeId.replaceAll("-", " "))
             )}
           />
         ))}
