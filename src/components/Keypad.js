@@ -8,7 +8,11 @@ const Keypad = ({ keys, type, animeId }) => {
       {keys.map(([keyName, keyUrl]) => {
         return (
           <NavLink
-            to={`/stream/${animeId}?ep=${keyUrl}`}
+            to={
+              type === "numeric"
+                ? `/stream/${animeId}?ep=${keyUrl}`
+                : `/az-list/${keyUrl}`
+            }
             className={`${
               queryParams.get("ep") === keyUrl ? "active-button" : ""
             }`}

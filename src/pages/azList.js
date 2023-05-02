@@ -1,12 +1,18 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import AlphanumericSearch from "../components/AlphanumericSearch";
 import AnimeList from "../components/AnimeList";
 
+import { AZContext } from "../contexts/azContextProvider";
+
 const AZList = () => {
+  const { characterSearchedAnime } = useContext(AZContext);
+
   return (
     <Fragment>
       <AlphanumericSearch />
-      <AnimeList type="broad" />
+      {characterSearchedAnime.length > 0 && (
+        <AnimeList type="broad" data={characterSearchedAnime} />
+      )}
     </Fragment>
   );
 };

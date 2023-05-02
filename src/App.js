@@ -30,7 +30,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/stream/:animeId" element={<Stream />} />
-              <Route path="/az-list" element={<AZList />} />
+              <Route path="/az-list/:charId" element={<AZList />} />
               <Route path="/genre/:genreId" element={<Genres />} />
             </Routes>
           </section>
