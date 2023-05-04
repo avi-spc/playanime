@@ -1,7 +1,8 @@
-import { NavLink, useSearchParams } from "react-router-dom";
+import { NavLink, useParams, useSearchParams } from "react-router-dom";
 
 const Keypad = ({ keys, type, animeId }) => {
   const [queryParams] = useSearchParams();
+  const { charId } = useParams();
 
   return (
     <div className={`keypad ${type}`}>
@@ -14,7 +15,9 @@ const Keypad = ({ keys, type, animeId }) => {
                 : `/az-list/${keyUrl}`
             }
             className={`${
-              queryParams.get("ep") === keyUrl ? "active-button" : ""
+              queryParams.get("ep") === keyUrl || charId === keyUrl
+                ? "active-button"
+                : ""
             }`}
             key={keyName}
           >

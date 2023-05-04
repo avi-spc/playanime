@@ -13,7 +13,9 @@ const FeaturedAnimeContextProvider = (props) => {
   const populateAnimeData = async (animeId) => {
     const res = await axios(`anime-details/${animeId}`);
     const animeData = res.data;
-    
+
+    if ("error" in animeData) return;
+
     animeData.animeId = animeId;
 
     setFeaturedAnime((data) => [...data, animeData]);

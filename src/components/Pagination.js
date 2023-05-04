@@ -1,28 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
-import { GenreContext } from "../contexts/genreContextProvider";
+import { PaginationContext } from "../contexts/paginationContextProvider";
 
 const Pagination = () => {
-  const [page, setPage] = useState(1);
-
-  const { genre, fetchGenreAnime } = useContext(GenreContext);
-
-  const updatePageNumber = (delta) => {
-    setPage((pageNumber) => {
-      pageNumber += delta;
-
-      if (pageNumber >= 1) return pageNumber;
-      else return 1;
-    });
-  };
-
-  useEffect(() => {
-    fetchGenreAnime(page);
-  }, [page]);
-
-  useEffect(() => {
-    setPage(1);
-  }, [genre]);
+  const { page, updatePageNumber } = useContext(PaginationContext);
 
   return (
     <div className="pagination">

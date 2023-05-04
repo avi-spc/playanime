@@ -1,12 +1,14 @@
-import { useEffect, useState, createContext, useRef } from "react";
+import { useEffect, useState, createContext, useRef, useContext } from "react";
 
 import axios from "../utils/axiosInstance";
+import { PaginationContext } from "./paginationContextProvider";
 
 export const AZContext = createContext();
 
 const AZContextProvider = (props) => {
-  const [char, setChar] = useState();
+  const [char, setChar] = useState("A");
   const [characterSearchedAnime, setCharacterSearchedAnime] = useState([]);
+  const { page, resetPage } = useContext(PaginationContext);
 
   const abortController = useRef(new AbortController());
 
@@ -32,7 +34,12 @@ const AZContextProvider = (props) => {
 
   useEffect(() => {
     fetchCharacterAnime();
+    resetPage();
   }, [char]);
+
+  useEffect(() => {
+    fetchCharacterAnime(page);
+  }, [page]);
 
   return (
     <AZContext.Provider value={{ characterSearchedAnime, updateChar }}>
