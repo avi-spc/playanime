@@ -1,9 +1,9 @@
 import { Fragment, useContext } from "react";
 import AlphanumericSearch from "../components/AlphanumericSearch";
-import AnimeList from "../components/AnimeList";
 
-import { AZContext } from "../contexts/azContextProvider";
 import Pagination from "../components/Pagination";
+import AnimeGrid from "../components/AnimeGrid";
+import { AZContext } from "../contexts/azContextProvider";
 
 const AZList = () => {
   const { characterSearchedAnime } = useContext(AZContext);
@@ -12,7 +12,10 @@ const AZList = () => {
     <Fragment>
       <AlphanumericSearch />
       {characterSearchedAnime.length > 0 && (
-        <AnimeList type="broad" data={characterSearchedAnime} />
+        <AnimeGrid
+          animeList={characterSearchedAnime}
+          animeDetails={characterSearchedAnime}
+        />
       )}
       <Pagination />
     </Fragment>

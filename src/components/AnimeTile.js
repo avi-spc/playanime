@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 
 import AnimeOverlayDetails from "./AnimeOverlayDetails";
 import { captalizeEachWord } from "../utils/capitalize";
-import { useState } from "react";
 
 const AnimeTile = ({ anime, details }) => {
   return (
