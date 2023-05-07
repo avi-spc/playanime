@@ -16,12 +16,16 @@ const GenreDropdown = () => {
   return (
     <div className="genre-dropdown">
       <div className="genre-dropdown__active-genre">
-        <button className="btn btn--genre">{captalizeEachWord(genreId)}</button>
+        <button className="btn btn--genre">
+          {captalizeEachWord(genreId.replaceAll("-", " "))}
+        </button>
         <img src="/images/icons/arrow_right.png" alt="" />
         <div className="genre-dropdown__genre-list">
           {genres.map((genre) => (
             <NavLink to={`/genre/${genre}`} key={genre}>
-              <button className="btn btn--genre">{genre}</button>
+              <button className="btn btn--genre">
+                {genre.replaceAll("-", " ")}
+              </button>
             </NavLink>
           ))}
         </div>
