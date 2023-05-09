@@ -1,10 +1,12 @@
 .btn {
   font-family: inherit;
-  
+
   color: $text-primary;
   background-color: $surface-3;
   border: none;
   cursor: pointer;
+
+  transition: all 0.4s;
 
   &--watch {
     padding: 0.5rem;
