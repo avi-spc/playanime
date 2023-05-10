@@ -31,7 +31,7 @@
   }
 
   &__hover-overlay {
-    display: none;
+    opacity: 0;
 
     position: absolute;
     top: 50%;
@@ -42,6 +42,13 @@
     height: 100%;
 
     background-color: rgba(#000, 0.4);
+
+    transition: all 0.4s ease-out;
+
+    img {
+      scale: 0;
+      transition: all 0.3s ease-out;
+    }
   }
 
   &__name {
@@ -54,17 +61,26 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
+    transition: all 0.4s;
   }
 
-  .anime-overlay-details {
-    display: none;
+  &:hover > &__name {
+    color: $text-hovered;
   }
 
   &:hover > .anime-overlay-details {
-    display: flex;
+    width: 65rem;
+    height: auto;
+    overflow: auto;
+    opacity: 1;
   }
 
   &:hover .anime-tile__hover-overlay {
-    display: block !important;
+    opacity: 1;
+
+    img {
+      scale: 1;
+    }
   }
 }
