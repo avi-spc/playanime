@@ -24,7 +24,7 @@ const AnimeStream = () => {
       const res = await axios(`vidcdn/watch/${episodeId}`, {
         signal: abortController.current.signal,
       });
-      const url = res.data.Referer;
+      const url = res.data.error.config.url;
 
       setStreamUrl(url);
     } catch (error) {
@@ -62,7 +62,7 @@ const AnimeStream = () => {
         {anime.status !== "Upcoming" && (
           <iframe
             className="anime-stream__video-frame"
-            src={streamUrl}
+            src={`${streamUrl.slice(0, 8)}${streamUrl.slice(14)}`}
             frameborder="0"
             marginheight="0"
             marginwidth="0"
