@@ -24,9 +24,13 @@ const AnimeStream = () => {
       const res = await axios(`vidcdn/watch/${episodeId}`, {
         signal: abortController.current.signal,
       });
-      const url = res.data.error.config.url;
+      const url =
+        res.data.error.config.url.slice(0, 8) +
+        res.data.error.config.url.slice(14);
 
-      setStreamUrl(url);
+      console.log(url);
+
+      if (url.includes("playtaku")) setStreamUrl(url);
     } catch (error) {
       if (error.name === "AbortError") return;
     }
@@ -62,7 +66,7 @@ const AnimeStream = () => {
         {anime.status !== "Upcoming" && (
           <iframe
             className="anime-stream__video-frame"
-            src={`${streamUrl.slice(0, 8)}${streamUrl.slice(14)}`}
+            src={streamUrl}
             frameborder="0"
             marginheight="0"
             marginwidth="0"
